@@ -1,4 +1,10 @@
 loguru
 fastapi
 uvicorn
-git+https://github.com/joaogambaro/body_model
+
+--index-url https://pypi.fury.io/joaogambaro/
+--extra-index-url https://pypi.org/simple/
+modelo_body_performance
+
+
+#git+https://github.com/joaogambaro/body_model
