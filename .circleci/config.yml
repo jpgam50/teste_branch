@@ -76,9 +76,14 @@ jobs:
 workflows:
   version: 2
 
-  contrucao_e_teste_do_pacote_do_servidor:
+  contrucao e teste do pacote do servidor:
     jobs:
-      - Constroi_e_envia_pacote
+      - Constroi_e_envia_pacote:
+          filters:
+            branches:
+              only:
+                - desenv_package
+                
       - baixa_e_testa_modelo_do_servidor:
           requires:
             - Constroi_e_envia_pacote
