@@ -2,7 +2,6 @@
 version: 2
 
 
-
 jobs:
 
   #trabalho 1:
@@ -66,15 +65,28 @@ jobs:
           command: |
             . venv/bin/activate
             pip install --index-url https://pypi.fury.io/joaogambaro/ --extra-index-url https://pypi.org/simple/ modelo_body_performance
+
+      - run:
+          name: testa pacote do servidor
+          command: |
+            . venv/bin/activate
             python -m teste_modelo.test_previsoes -v
 
 
 workflows:
   version: 2
-  #build-test-and-deploy:
-  build-and-deploy:
+
+  contrucao e teste do pacote do servidor:
     jobs:
       - Constroi_e_envia_pacote
+          filters:
+            branches:
+              only:
+                - desenv_package
       - baixa_e_testa_modelo_do_servidor:
           requires:
             - Constroi_e_envia_pacote
+          filters:
+            branches:
+              only:
+                - desenv_package
