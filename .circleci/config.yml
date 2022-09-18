@@ -83,6 +83,7 @@ workflows:
             branches:
               only:
                 - desenv_package
+                
       - baixa_e_testa_modelo_do_servidor:
           requires:
             - Constroi_e_envia_pacote
