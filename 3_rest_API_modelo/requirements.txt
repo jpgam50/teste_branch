@@ -1,0 +1,4 @@
+loguru
+fastapi
+uvicorn
+git+https://github.com/joaogambaro/body_model

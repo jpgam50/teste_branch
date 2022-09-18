@@ -1,0 +1,22 @@
+
+bodyPerformance:
+dado completo, sem divisão em dados de teste ou dados de treinamento
+
+dados_teste:
+os dados completos foram divididos em dados de teste e de treinamento.
+Os dados de teste são usado para teste finais no modelo
+
+
+dados_treinamento:
+os dados completos foram divididos em dados de teste e de treinamento.
+Os dados de treinameno são usado para a construção e obtençãodo melhor
+modelo. No desenvolvimento do modelo estes dados são divididos novamente
+em dados de teste e de treinamento. Sendo o conjunto de treinamento usado
+para verificar na etapa de desenvolvimento qual o melhor modelo possível
+
+
+dados_test_prev_API:
+estes dados são obtidos já com o modelo desenvolvido e usando a tabel da dados
+de teste. Seu objetivo é testar a implementação do modelo em pacotes. Esta tabela
+é equivalente a tabela de teste com uma coluna adicional que contem as previsões 
+para o medelo final desenvovido.

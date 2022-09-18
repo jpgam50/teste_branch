@@ -1,0 +1,23 @@
+[build-system]
+requires      = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+#[project]
+#name = "modelo_body_performance"   #obrigatorio
+#version = "1.0.0"                 #obrigatorio
+#authors = [{ name = "Joao Paulo Gambaro", email = "joaopaulogambaro@gmail.com" }]
+#description = "Implementa um modelo de classificaçao"
+#requires-python = ">=3.7"
+#dependencies = [
+#  'feature-engine==1.4.1',
+#  'joblib==1.1.0',
+#  'numpy==1.23.2',
+#  'pandas==1.4.3',
+#  'scikit-learn==1.1.2',
+#  'scipy==1.9.0',
+#  'pydantic==1.9.2'
+#]
+
+#[tool.setuptools]
+#py-modules = []
