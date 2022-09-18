@@ -7,4 +7,5 @@ uvicorn
 modelo_body_performance
 
 
-#git+https://github.com/joaogambaro/body_model
+#git push heroku testbranch:main
+#heroku git:remote -a frozen-everglades-07476
