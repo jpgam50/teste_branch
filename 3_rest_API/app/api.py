@@ -27,7 +27,7 @@ class resultadoPrev(BaseModel):
 async def predict(input_data: schemas.MultipleInputs_schemas) -> Any:
 
     '''
-    O comentário entre aspas na função dos endpoints aparece na documentação.
+    (Atualização de teste)O comentário entre aspas na função dos endpoints aparece na documentação.
     Isto é bom para descrever o que faz a função.
     '''
 
