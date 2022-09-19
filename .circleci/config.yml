@@ -73,9 +73,30 @@ jobs:
             python -m teste_modelo.test_previsoes -v
 
 
+  #trabalho 3
+  implementa_API:
+
+    docker:
+      - image: cimg/python:3.10
+    working_directory: ~/repo
+
+    steps:
+      #Step 1: baixa o repositório do git
+      - checkout
+
+      #Step 2:
+      - run:
+          name: envia API para o heroku
+          command: |
+            git subtree push --prefix 3_rest_API https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+
+
+
+
 workflows:
   version: 2
 
+ #workflow 1
   contrucao e teste do pacote do servidor:
     jobs:
       - Constroi_e_envia_pacote:
@@ -83,7 +104,7 @@ workflows:
             branches:
               only:
                 - desenv_package
-                
+
       - baixa_e_testa_modelo_do_servidor:
           requires:
             - Constroi_e_envia_pacote
@@ -91,3 +112,13 @@ workflows:
             branches:
               only:
                 - desenv_package
+
+
+  #workflow 2:
+  implementacao da api no heroku:
+    jobs:
+      - implementa_API:
+          filters:
+            branches:
+              only:
+                - master
