@@ -65,6 +65,10 @@ jobs:
           command: |
             . venv/bin/activate
             pip install --index-url https://pypi.fury.io/joaogambaro/ --extra-index-url https://pypi.org/simple/ modelo_body_performance
+          # Obs: para instalar um pacote pelo gemfury realmente são necessaŕios
+          # os dois comandos --index-url <path>  e --extra-index-url <path>. Em
+          # um arquivo requirements.txt isto deveria ser colocado em duas linhas
+          # diferentes e o nome do modelo na terceira linha
 
       - run:
           name: testa pacote do servidor
