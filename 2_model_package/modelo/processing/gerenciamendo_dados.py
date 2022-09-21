@@ -1,10 +1,11 @@
 import pandas as pd
 from pathlib import Path
 import joblib
+import os
 
 # from model import __version__ as _version
 from modelo.configuracoes.config import AppConfig
-from modelo.configuracoes.caminhos import DADOS_DIR, MODEL_TREINADO_DIR
+from modelo.configuracoes.caminhos import DADOS_DIR,MODELO_DIR, MODEL_TREINADO_DIR
 
 
 # Carrega os dados para o treinamento
@@ -20,25 +21,33 @@ def carrega_modelo(path_modelo):
 
 
 
+
 def salva_modelo(modelo):
     """
     Salva uma versão do modelo e apaga todas as outras existentes. Se a versão não mudar
     o modelo salvo subscreve a existente.
     """
+    # cria o diretório para salvar o modelo
+    if(not os.path.isdir(MODEL_TREINADO_DIR)):
+        os.mkdir(MODEL_TREINADO_DIR)
 
-    # colocar isto como arquivo no futuro
-    _version = "1.0.0"
 
-    # Nome + caminho do arquivo salvo
-    nome_arquivo = f"{AppConfig.mome_pipeline_salvo}{_version}.pkl"
+    # le a versao do pacote
+    strFile= MODELO_DIR / "VERSION"
+    _versao=open(strFile,).read()
+
+
+    # Caminho do arquivo salvo
+    nome_arquivo = f"{AppConfig.mome_pipeline_salvo}{_versao}.pkl"
     path_arquivo = MODEL_TREINADO_DIR / nome_arquivo
+
 
     # remove o arquivo existente (fornece nome)
     remove_modelos_antigos(nome_arquivo)
 
     # salva um novo arquivo (fornece: caminho + nome)
-    print(path_arquivo)
     joblib.dump(modelo, path_arquivo)
+
 
 
 def remove_modelos_antigos(modelo_novo):

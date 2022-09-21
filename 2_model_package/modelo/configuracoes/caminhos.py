@@ -1,6 +1,6 @@
 from pathlib import Path
-
 import os
+
 
 # caminho absoluto deste script
 PATH_SCRIPT= os.path.abspath(__file__)

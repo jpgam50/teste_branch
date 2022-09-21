@@ -1,1 +1,10 @@
-dvdffd
+
+
+O arquivo .gitkeep não é documentado no git. O git não monitora pastas
+vazias no repositório, contudo nesta caso é necessário enviar uma
+pasta vazia para o github para que o dados possam ser armazenados
+
+
+OBS:Isto se torna necessário pq o git não monitora pastas vazia e por isto
+não envia estas pastas para o github. Uma forma de contornar isto seria
+implementar uma função que cria a pasta desejada quando necessário
