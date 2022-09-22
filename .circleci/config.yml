@@ -42,7 +42,7 @@ jobs:
             python -m build
             cd ..
             chmod a+x ./scripts/envio_pacote.sh
-            .scripts/envio_pacote.sh
+            ./scripts/envio_pacote.sh
 
 
   #trabalho 2:
