@@ -21,12 +21,12 @@ def carrega_modelo(path_modelo):
 
 
 
-
 def salva_modelo(modelo):
     """
     Salva uma versão do modelo e apaga todas as outras existentes. Se a versão não mudar
     o modelo salvo subscreve a existente.
     """
+
     # cria o diretório para salvar o modelo
     if(not os.path.isdir(MODEL_TREINADO_DIR)):
         os.mkdir(MODEL_TREINADO_DIR)

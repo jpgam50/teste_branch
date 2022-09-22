@@ -40,8 +40,9 @@ jobs:
             python -m pip install build twine
             cd 2_model_package
             python -m build
-            chmod a+x envio_pacote.sh
-            ./envio_pacote.sh
+            cd ..
+            chmod a+x ./scripts/envio_pacote.sh
+            .scripts/envio_pacote.sh
 
 
   #trabalho 2:
