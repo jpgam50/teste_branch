@@ -28,7 +28,8 @@ async def predict(input_data: schemas.MultipleInputs_schemas) -> Any:
 
     '''
     O comentário entre aspas na função dos endpoints aparece na documentação.
-    Isto é bom para descrever o que faz a função.
+    Isto é bom para descrever o que faz a função.(verifica o funcionamento da
+    versao 1.0.4)
     '''
 
     input_df = pd.DataFrame(jsonable_encoder(input_data.inputs))
