@@ -33,9 +33,10 @@ if [ -d $FOLDER ]; then
 
   done
 
+
   #envia o arquivo para o servidor
-  curl -F package=@$"dist/$ARQUIVO" "$GEMFURRY_URL"
-  echo "Endereço do servidor:  $GEMFURRY_URL"
+  curl -F package=@$"${FOLDER}/$ARQUIVO" "$GEMFURRY_URL"
+  echo "Endereço do servidor:  "${FOLDER}/$ARQUIVO"
 
 else
   echo ""
