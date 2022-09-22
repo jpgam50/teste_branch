@@ -40,7 +40,12 @@ jobs:
             python -m pip install build twine
             cd 2_model_package
             python -m build
-            cd ..
+
+      # step 5: envia o pacote para o servidor
+      - run:
+          name: publica o pacote
+          command: |
+            . venv/bin/activate
             chmod a+x ./scripts/envio_pacote.sh
             ./scripts/envio_pacote.sh
 

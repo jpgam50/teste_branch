@@ -22,8 +22,11 @@ if [ -d $FOLDER ]; then
   done
 
   #envia o arquivo para o servidor
-  curl -F package=@$FOLDER/$ARQUIVO "$GEMFURRY_URL"
+  curl -F package=@"$FOLDER/$ARQUIVO" "$GEMFURRY_URL"
   echo Código de retorno da função que envia o pacote: $?
+
+  #Obs:as variáveis no comando curl devem estar entre "" para
+  #o comando funcionar corretamente
 
 else
   echo "Erro:pacote não enviado, o diretório '$FOLDER' não existe"
