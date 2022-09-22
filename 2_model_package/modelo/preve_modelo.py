@@ -1,6 +1,6 @@
 from modelo.processing.gerenciamendo_dados import carrega_modelo
 from modelo.configuracoes.config import AppConfig
-from modelo.configuracoes.caminhos import MODEL_TREINADO_DIR
+from modelo.configuracoes.caminhos import MODEL_TREINADO_DIR, MODELO_DIR
 from modelo.processing.validacao import valida_inputs
 
 
@@ -13,8 +13,16 @@ def preve_pipeline(dados):
     #Inputs:
     # X-> dataframe contendo os dados
 
+    #le a versao do pacote
+    read_object=open(MODELO_DIR/ "VERSION",)
+    _versao=read_object.readline().strip()
+    read_object.close()
+    #OBS.: é necessário usar readline() (para ler a primeira linha do arquivo)
+    #e também strip() (para eliminar a leitura da quebra de linha do arquivo)
+
+
     #carrega modelo treinado
-    str_model=str(MODEL_TREINADO_DIR/AppConfig.mome_pipeline_salvo)+"1.0.0.pkl"
+    str_model=str(MODEL_TREINADO_DIR/AppConfig.mome_pipeline_salvo)+_versao+".pkl"
     modelo=carrega_modelo(str_model)
 
     #valida dados
@@ -38,6 +46,7 @@ def preve_pipeline(dados):
 
 if  __name__=="__main__":
 
+
     from modelo.processing.gerenciamendo_dados import carrega_dataset
     from modelo.configuracoes.caminhos import DADOS_DIR
     from modelo.configuracoes.config import AppConfig
@@ -50,9 +59,3 @@ if  __name__=="__main__":
     results = preve_pipeline(df)
     print("Previsões: ",results['predictions'])
     print("Erros: ", results['errors'])
-
-
-
-
-
-    

@@ -25,6 +25,8 @@ class TestFunc(unittest.TestCase):
         results = preve_pipeline(df)
         y_hat = results.get("predictions")
 
+
+
         # transformação: dados previstos
         class_map = {0:'C', 1:'D', 2:'A', 3:'B'}
         y_hat = pd.Series(y_hat).map(class_map)

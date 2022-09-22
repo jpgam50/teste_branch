@@ -2,7 +2,10 @@ from setuptools import find_packages, setup
 
 #le a versao do pacote
 strFile= "modelo/VERSION"
-_versao=open(strFile,).read()
+_versao=open(strFile,).readline().strip()
+
+#OBS.: é necessário usar readline() (para ler a primeira linha do arquivo)
+#e também strip() (para eliminar a leitura da quebra de linha do arquivo)
 
 
 setup(

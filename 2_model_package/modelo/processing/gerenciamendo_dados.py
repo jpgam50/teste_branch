@@ -33,8 +33,11 @@ def salva_modelo(modelo):
 
 
     # le a versao do pacote
-    strFile= MODELO_DIR / "VERSION"
-    _versao=open(strFile,).read()
+    read_object=open(MODELO_DIR/ "VERSION",)
+    _versao=read_object.readline().strip()
+    read_object.close()
+    #OBS.: é necessário usar readline() (para ler a primeira linha do arquivo)
+    #e também strip() (para eliminar a leitura da quebra de linha do arquivo)
 
 
     # Caminho do arquivo salvo
