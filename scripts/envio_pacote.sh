@@ -6,7 +6,7 @@
 PATH_PROJETO=$(realpath $"2_model_package")  #diretório do projeto do pacote
 FOLDER=${PATH_PROJETO}"/dist"                #diretório do arquivo .gz
 ARQUIVO=""
-
+GEMFURRY_URL=https://19zQZi-RplYPStzKQnuswBFV0H9z5li8@push.fury.io/joaogambaro/
 
 #verifica se o arquivo existe e se é um diretório
 if [ -d $FOLDER ]; then
@@ -23,8 +23,9 @@ if [ -d $FOLDER ]; then
 
   #envia o arquivo para o servidor
   curl -F package=@"$FOLDER/$ARQUIVO" "$GEMFURRY_URL"
-  echo "$FOLDER/$ARQUIVO"
-  echo "$GEMFURRY_URL"
+  echo Path file: "$FOLDER/$ARQUIVO"
+  echo Url: "$GEMFURRY_URL"
+  #echo "$GEMFURRY_URL"
   echo Código de retorno da função que envia o pacote: $?
 
   #Obs:as variáveis no comando curl devem estar entre "" para
