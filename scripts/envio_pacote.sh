@@ -23,6 +23,8 @@ if [ -d $FOLDER ]; then
 
   #envia o arquivo para o servidor
   curl -F package=@"$FOLDER/$ARQUIVO" "$GEMFURRY_URL"
+  echo "$FOLDER/$ARQUIVO"
+  echo "$GEMFURRY_URL"
   echo Código de retorno da função que envia o pacote: $?
 
   #Obs:as variáveis no comando curl devem estar entre "" para
