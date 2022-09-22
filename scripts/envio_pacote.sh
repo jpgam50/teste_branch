@@ -4,15 +4,18 @@
 
 
 
-PATH_SCRIPT=$(realpath $"paths.sh")  #diretório do script
-PATH_ROOT=${PATH_SCRIPT%*/scripts/*} #diretório raiz do projeto
-PATH_MODEL_PKC=${PATH_ROOT}"/2_model_package" #diretório das pastas do projeto
+PATH_SCRIPT=$(realpath $"2_model_package")  #diretório do script
+#PATH_ROOT=${PATH_SCRIPT%*envipacote.sh*} #diretório raiz do projeto
+#PATH_MODEL_PKC=${PATH_ROOT}"/2_model_package" #diretório das pastas do projeto
 
 
 
 #deretório do arquivo .gz
-FOLDER=${PATH_MODEL_PKC}"/dist"
+FOLDER=${PATH_SCRIPT}"/dist"
 ARQUIVO=""
+
+echo PATH_SCRIPT $PATH_SCRIPT
+echo FOLDER $FOLDER
 
 
 #verifica se o arquivo existe e se é um diretório
@@ -35,5 +38,7 @@ if [ -d $FOLDER ]; then
   echo "Endereço do servidor:  $GEMFURRY_URL"
 
 else
+  echo ""
+  echo "--- erro:pacote não enviado ---"
   echo "O diretório $FOLDER não exite"
 fi
