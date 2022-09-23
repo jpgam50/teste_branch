@@ -7,8 +7,7 @@ PATH_PROJETO=$(realpath $"2_model_package")  #diretório do projeto do pacote
 FOLDER=${PATH_PROJETO}"/dist"                #diretório do arquivo .gz
 ARQUIVO=""
 
-
-#verifica se o arquivo existe e se é um diretório
+# verifica se o arquivo existe e se é um diretório
 if [ -d $FOLDER ]; then
 
   # loop sobre os arquivos da pasta
