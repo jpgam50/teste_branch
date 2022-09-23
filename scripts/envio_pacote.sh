@@ -3,9 +3,13 @@
 #a construção do pacote e envia este arquivo paro o servidor do gemfury
 
 
-PATH_PROJETO=$(realpath $"2_model_package")  #diretório do projeto do pacote
-FOLDER=${PATH_PROJETO}"/dist"                #diretório do arquivo .gz
+PATH_PROJETO=$(realpath $0)                    #caminho do script
+PATH_PROJETO=${PATH_PROJETO%*/*}               #diretório do script
+PATH_PROJETO=${PATH_PROJETO%*/*}               #deretório do projeto
+FOLDER=${PATH_PROJETO}"/2_model_package/dist"  #diretório do arquivo .gz
 ARQUIVO=""
+
+
 
 # verifica se o arquivo existe e se é um diretório
 if [ -d $FOLDER ]; then
