@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: modelo-body-performance
-Version: 1.0.2
-Summary: Implementa um modelo de classificacao
-Author: Joao Paulo Gambaro
-Author-email: joaopaulogambaro@gmail.com
-Requires-Python: >=3.7

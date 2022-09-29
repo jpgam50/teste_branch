@@ -5,7 +5,7 @@
 
 PATH_PROJETO=$(realpath $0)                    #caminho do script
 PATH_PROJETO=${PATH_PROJETO%*/*}               #diretório do script
-PATH_PROJETO=${PATH_PROJETO%*/*}               #deretório do projeto
+PATH_PROJETO=${PATH_PROJETO%*/*}               #diretório do projeto
 FOLDER=${PATH_PROJETO}"/2_model_package/dist"  #diretório do arquivo .gz
 ARQUIVO=""
 
