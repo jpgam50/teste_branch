@@ -21,8 +21,24 @@ class TestFunc(unittest.TestCase):
         str_file=DADOS_DIR/AppConfig.nome_dados_teste
         df = carrega_dataset(str_file)
 
+        varTrain=['age',
+         'gender',
+         'height_cm',
+         'weight_kg',
+         'body fat_%',
+         'diastolic',
+         'systolic',
+         'gripForce',
+         'sit and bend forward_cm',
+         'sit-ups counts',
+         'broad jump_cm'
+         ]
+
+        # seleciona variáveis de treinamento
+        df_train=df[varTrain]
+
         #faz previsao
-        results = preve_pipeline(df)
+        results = preve_pipeline(df_train)
         y_hat = results.get("predictions")
 
 
@@ -32,7 +48,7 @@ class TestFunc(unittest.TestCase):
         y_hat = pd.Series(y_hat).map(class_map)
 
         #precisao
-        prec=metrics.accuracy_score(df['class'], y_hat)
+        prec=metrics.accuracy_score(df['class'], y_hat)        
 
         #estatisticas com o modelo
         self.assertEqual(prec,0.7139303482587065,"A precisão não é a mesma do desenvolvimento")
