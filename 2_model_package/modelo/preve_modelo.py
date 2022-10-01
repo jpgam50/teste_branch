@@ -27,9 +27,7 @@ def preve_pipeline(dados):
 
 
     #valida dados
-    print(dados.iloc[0])
-    dados, erros= valida_inputs(dados)
-    print(dados.iloc[0])
+    dados, erros= valida_inputs(dados)    
 
     results = {
             "predictions": None,
