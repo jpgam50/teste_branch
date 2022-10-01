@@ -18,7 +18,7 @@ setup(
     #packages=find_packages(exclude=("tests",)),
     packages=find_packages(),
     install_requires=[
-      'feature-engine==1.4.1',
+      'feature-engine==1.4.1',  #OBS: quando eu removi esta funcao deu erro no circleci, entender o pq
       'joblib==1.1.0',
       'numpy==1.23.2',
       'pandas==1.4.3',
