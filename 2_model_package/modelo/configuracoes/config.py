@@ -20,7 +20,6 @@ class ModelConfig():
     variavel_alvo='class'                     #str
     gender='gender'                           #List[str]
     gender_map = {'M': 0, 'F': 1}             #Dict[str,int]
-
     random_state=0                             #int
     variaveis_renomear={
         'height_cm':'heightCm',

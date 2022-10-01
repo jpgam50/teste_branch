@@ -27,20 +27,19 @@ def preve_pipeline(dados):
 
 
     #valida dados
-    dados, erros= valida_inputs(dados)    
+    dados, erros= valida_inputs(dados)
 
     results = {
             "predictions": None,
             "errors": None,
-            #"version": _version,
+            "version": _versao,
             }
 
     #previsão com o modelo
     results = {
-        #"predictions": modelo.predict(dados),
         "predictions": modelo.predict(dados),
         "errors": erros,
-        #"version": _version,
+        "version": _versao,
         }
 
     return results
@@ -53,10 +52,10 @@ if  __name__=="__main__":
     from modelo.configuracoes.caminhos import DADOS_DIR
     from modelo.configuracoes.config import AppConfig
 
+
     #carrega os dados
     str_file=DADOS_DIR/AppConfig.nome_dados_teste
     df = carrega_dataset(str_file)
-
 
 
     #faz previsao

@@ -29,7 +29,6 @@ class TestFunc(unittest.TestCase):
         results = preve_pipeline(df)
         y_hat = results.get("predictions")
 
-
         #precisao
         prec=metrics.accuracy_score(df['class'], y_hat)
 

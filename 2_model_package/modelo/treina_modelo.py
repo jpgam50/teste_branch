@@ -20,7 +20,6 @@ def treina_pipeline():
     #renomeia as variáveis
     df = df.rename(columns=ModelConfig.variaveis_renomear)
 
-
     # seleciona variaveis de treinamento e alvo
     X, erros= valida_inputs(df)
     y = df[ModelConfig.variavel_alvo]
