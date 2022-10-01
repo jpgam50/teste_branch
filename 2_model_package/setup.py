@@ -17,8 +17,7 @@ setup(
     python_requires= ">=3.7",
     #packages=find_packages(exclude=("tests",)),
     packages=find_packages(),
-    install_requires=[
-      'feature-engine==1.4.1',
+    install_requires=[      
       'joblib==1.1.0',
       'numpy==1.23.2',
       'pandas==1.4.3',

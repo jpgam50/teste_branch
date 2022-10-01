@@ -58,6 +58,7 @@ class TestFunc(unittest.TestCase):
         #var_prev=[var for var in df.columns if var not in ['Unnamed: 0','class','prev_val']]
         #X = df[var_prev]
 
+        print(y_hat[0:10])
         #verifica para 10 valores
         for i in range(10):
             self.assertEqual(y_hat[i], df['prev_val'][i], "Valor da previsao não bateu")
