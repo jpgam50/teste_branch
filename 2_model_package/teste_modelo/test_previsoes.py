@@ -2,7 +2,7 @@ import unittest
 import pandas as pd
 from sklearn import metrics
 
-from modelo.configuracoes.config import AppConfig
+from modelo.configuracoes.config import AppConfig, ModelConfig
 from modelo.preve_modelo import preve_pipeline
 from modelo.processing.gerenciamendo_dados import carrega_dataset
 from modelo.configuracoes.caminhos import DADOS_DIR
@@ -21,39 +21,22 @@ class TestFunc(unittest.TestCase):
         str_file=DADOS_DIR/AppConfig.nome_dados_teste
         df = carrega_dataset(str_file)
 
-        varTrain=['age',
-         'gender',
-         'height_cm',
-         'weight_kg',
-         'body fat_%',
-         'diastolic',
-         'systolic',
-         'gripForce',
-         'sit and bend forward_cm',
-         'sit-ups counts',
-         'broad jump_cm'
-         ]
+        #renomeia as variáveis
+        df = df.rename(columns=ModelConfig.variaveis_renomear)
 
-        # seleciona variáveis de treinamento
-        df_train=df[varTrain]
 
         #faz previsao
-        results = preve_pipeline(df_train)
+        results = preve_pipeline(df)
         y_hat = results.get("predictions")
 
 
-
-        # transformação: dados previstos
-        class_map = {0:'C', 1:'D', 2:'A', 3:'B'}
-        y_hat = pd.Series(y_hat).map(class_map)
-
         #precisao
-        prec=metrics.accuracy_score(df['class'], y_hat)        
+        prec=metrics.accuracy_score(df['class'], y_hat)
 
         #estatisticas com o modelo
-        self.assertEqual(prec,0.7139303482587065,"A precisão não é a mesma do desenvolvimento")
+        self.assertEqual(prec,0.7350746268656716,"A precisão não é a mesma do desenvolvimento")
 
-        #OBS: a prcisao do modelo não é a colocada acima.
+        #OBS: a precisao do modelo não é a colocada acima.
         #acho que isto aocnteeu devido a validadacao dos
         #dados pelo pydantic
 
@@ -69,7 +52,6 @@ class TestFunc(unittest.TestCase):
 
         results = preve_pipeline(df)
         y_hat = results.get("predictions")
-        y_hat = pd.Series(y_hat).map({0:'C', 1:'D', 2:'A', 3:'B'})
 
         #OBS: segue abaixo como era feita a separação dos dados antes.Atualmente
         #a validação dos dados é feita dentro da função 'preve_pipeline' e a

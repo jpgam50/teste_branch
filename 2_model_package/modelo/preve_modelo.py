@@ -25,8 +25,11 @@ def preve_pipeline(dados):
     str_model=str(MODEL_TREINADO_DIR/AppConfig.mome_pipeline_salvo)+_versao+".pkl"
     modelo=carrega_modelo(str_model)
 
+
     #valida dados
+    print(dados.iloc[0])
     dados, erros= valida_inputs(dados)
+    print(dados.iloc[0])
 
     results = {
             "predictions": None,
@@ -36,6 +39,7 @@ def preve_pipeline(dados):
 
     #previsão com o modelo
     results = {
+        #"predictions": modelo.predict(dados),
         "predictions": modelo.predict(dados),
         "errors": erros,
         #"version": _version,
@@ -54,6 +58,8 @@ if  __name__=="__main__":
     #carrega os dados
     str_file=DADOS_DIR/AppConfig.nome_dados_teste
     df = carrega_dataset(str_file)
+
+
 
     #faz previsao
     results = preve_pipeline(df)

@@ -6,7 +6,7 @@
 # Configurações da API
 class AppConfig():
     nome_dados="dados_treinamento.csv"         #str
-    nome_dados_teste="dados_test_prev_API.csv"
+    nome_dados_teste="dados_test_pacote.csv"
     mome_pipeline_salvo= 'modelo_v'            #str
 
 
@@ -18,13 +18,9 @@ class ModelConfig():
     #como eu contrui NAO DEVE SER COLOCADA esta função como herança
 
     variavel_alvo='class'                     #str
-    map_alvo = {'C':0, 'D':1, 'A':2, 'B':3 }  #Dict[str, int]
     gender='gender'                           #List[str]
     gender_map = {'M': 0, 'F': 1}             #Dict[str,int]
 
-    continuous_var=['age','heightCm', 'weightKg', 'bodyFat', 'diastolic',
-                    'systolic', 'gripForce', 'sitBendCm',
-                    'sitUpsCounts', 'broadJumpCm']   #List[str]
     random_state=0                             #int
     variaveis_renomear={
         'height_cm':'heightCm',
@@ -34,15 +30,19 @@ class ModelConfig():
         'sit-ups counts':'sitUpsCounts',
         'broad jump_cm':'broadJumpCm'}
 
+    continuous_var=['age', 'heightCm', 'weightKg', 'bodyFat', 'diastolic',
+            'systolic', 'gripForce', 'sitBendCm',
+            'sitUpsCounts', 'broadJumpCm']
+
     vari_preditivas=[
-    'age',
-    'heightCm',    #renomeada
-    'weightKg',    #renomeada
-    'bodyFat',     #renomeada
-    'diastolic',
-    'systolic',
-    'gripForce',
-    'sitBendCm',    #renomeada
-    'sitUpsCounts', #renomeada
-    'broadJumpCm',  #renomeada
-    'gender']
+        'age',
+        'heightCm',    #renomeada
+        'weightKg',    #renomeada
+        'bodyFat',     #renomeada
+        'diastolic',
+        'systolic',
+        'gripForce',
+        'sitBendCm',    #renomeada
+        'sitUpsCounts', #renomeada
+        'broadJumpCm',  #renomeada
+        'gender']

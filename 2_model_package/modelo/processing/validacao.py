@@ -9,6 +9,7 @@ from modelo.configuracoes.config import ModelConfig
 
 class VarisPrevs_schemas(BaseModel):
     age: Optional[float]
+    gender: Optional[str]
     heightCm: Optional[float]
     weightKg: Optional[float]
     bodyFat: Optional[float]
@@ -18,7 +19,7 @@ class VarisPrevs_schemas(BaseModel):
     sitBendCm: Optional[float]
     sitUpsCounts: Optional[float]
     broadJumpCm: Optional[float]
-    gender: Optional[str]
+
 
 
 class MultipleInputs_schemas(BaseModel):
