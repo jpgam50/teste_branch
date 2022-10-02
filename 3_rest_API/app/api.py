@@ -16,7 +16,7 @@ api_router = APIRouter()
 
 class resultadoPrev(BaseModel):
     errors: Optional[Any]
-    predictions: Optional[List[float]]
+    predictions: Optional[List[str]]
 
 
 
