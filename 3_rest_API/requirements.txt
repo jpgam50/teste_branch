@@ -4,7 +4,7 @@ uvicorn
 
 --index-url https://pypi.fury.io/joaogambaro/
 --extra-index-url https://pypi.org/simple/
-modelo_body_performance
+modelo_body_performance==1.0.5
 
 
 #git push heroku testbranch:main
